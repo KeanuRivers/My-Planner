@@ -1,7 +1,10 @@
 $(document).ready(function(){
+    //Date and time set
     var currentDate = moment().format('MMMM Do YYYY');
     $("#currentDay").text(currentDate);
-    $('.saveBtn').on("click", function () {
+
+    //Save Button Columns, setting and getting local storage
+    $('.saveBtn').click(function () {
         var dateTime = $(this).attr("date-time");
         var timeData = $(`#${dateTime}`).val(); 
         localStorage.setItem(dateTime, timeData);
@@ -17,4 +20,8 @@ $(document).ready(function(){
     $("#3").val(localStorage.getItem('3'));
     $("#4").val(localStorage.getItem('4'));
     $("#5").val(localStorage.getItem('5'));
+
+//syncing color colums with the time
+var currentHour = moment().hours();
+$('.input').each
 });
