@@ -23,5 +23,21 @@ $(document).ready(function(){
 
 //syncing color colums with the time
 var currentHour = moment().hours();
-$('.input').each
+$('.input').each(function () {
+    var blockTime = parseInt($(this).attr("id"));
+    if (blockTime < currentHour) {
+        $(this).addClass("past")
+        $(`#btn-${blockTime}`).addClass("btn btn-secondary");
+    } else if (blockTime === currentHour) {
+        $(this).removeClass("past");
+        $(this).addClass("present");
+        $(`#btn-${blockTime}`).addClass("btn btn-primary");
+    } else {
+        $(this).removeClass("past");
+        $(this).removeClass("present");
+        $(this).addClass("future");
+        $(`#btn-${blockTime}`).addClass("btn btn-warning");
+    }
+});
+
 });
