@@ -8,7 +8,7 @@ $(document).ready(function(){
         var dateTime = $(this).attr("date-time");
         var timeData = $(`#${dateTime}`).val(); 
         localStorage.setItem(dateTime, timeData);
-        console.log(`value:${timeData} time:${dateTime}`);  
+        alert("Item Saved to Local Storage");  
     });
 
     $("#9").val(localStorage.getItem('9'));
